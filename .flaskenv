@@ -1,0 +1,1 @@
+FLASK_APP=noteworth_challenge_api
