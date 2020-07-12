@@ -1,7 +1,6 @@
-
-===
+==============================
 Noteworth Coding Challenge API
-===
+==============================
 
 This challenge is derived from https://homework.adhoc.team/noclist/ and 
 requires users to retrieve an authentication token and use it to retrieve data
@@ -18,8 +17,10 @@ quite high, or can be provided as a pair-programming exercise lasting an hour
 but with an emphasis on implementation and thought process instead of feature-
 completeness.
 
+=====
 Setup
-===
+=====
+
 This application was developed using `Poetry`_ and python 3.8.3. To run the
 application in a local dev environment, from the project root run
 `$ poetry run flask run`
@@ -30,8 +31,10 @@ If everything is configured and running as expected, you should get a response
 To evaluate tests:
 `$ poetry run pytest`
 
+============
 Contributing
-===
+============
+
 TBD
 
 .. _Poetry: https://python-poetry.org/
