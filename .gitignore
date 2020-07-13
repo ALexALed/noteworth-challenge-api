@@ -128,3 +128,6 @@ dmypy.json
 
 # editors
 .vscode/
+
+# data
+data.pickle
