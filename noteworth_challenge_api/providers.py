@@ -35,8 +35,8 @@ def list() -> Response:
     with open('data.json', 'rb') as f:
         data = json.load(f)
     
-    providers_list = random.sample(data['practitioners'], 10)
-    data['practitioners'] = providers_list
+    providers_list = random.sample(data['providers'], 10)
+    data['providers'] = providers_list
     body = json.dumps(data)
 
     #failure: incomplete data silently truncates response
