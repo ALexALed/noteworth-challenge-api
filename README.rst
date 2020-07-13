@@ -7,9 +7,12 @@ Scenario
 
 One of the Noteworth healthcare provider partners doesn't want to manually
 update clinicians in our platform. Instead, they have provided an API for
-us to use to retrieve the latest list of providers and add them in our system.
-Unfortunately, this API is not very stable and has a tendancy to drop 
-connections and suffer other Issues. 
+us to use to peridically reach out and add them in our system ourselves.
+Unfortunately this API is not very stable and has a tendancy to misbehave
+with dropping connections, periodic unexplained errors, and other issues. 
+
+For this challenge you will need to make two calls to the API, one to get an 
+auth token and another to retrieve the list of providers.
 
 Criteria
 ========
