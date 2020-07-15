@@ -25,8 +25,7 @@ collaborators. Include the following items:
 
 - Description of the problem and solution.
 - Instruction to setup and run application, tests, etc.
-- Trade-offs you might have made, anything you left out, or what you might
-    do differently if you were to spend additional time on the project.
+- Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
 
 The submission must be written in Python/Django.
 The submission must make calls to both APIs and save the results in a database.
@@ -93,8 +92,7 @@ The aspects of your code we will assess include:
 - **Correctness**: Does the application do what was asked? If there is anything missing, does the README explain why it is missing?
 - **Code quality**: Is the code simple, easy to understand, and maintainable? Are there any code smells or other red flags? Does object-oriented code follows principles such as the single responsibility principle? Is the coding style consistent with the language's guidelines? Is it internally consistent throughout the codebase?
 - **Security**: Are there any obvious vulnerabilities?
-- **Testing**: How thorough is the test suite? Will they be difficult to change if the requirements of the application were to change? Are there some unit and some integration tests?
-        We're not looking for 100% code coverage, just enough to get a feel for your thoughtfulness and approach.
+- **Testing**: How thorough is the test suite? Is it flexible to update with code changes? Are there some unit and some integration tests? 100% code coverage is not expected, we're looking at the approach.
 - **UX:** Is the web interface understandable and pleasing to use? Is the API intuitive?
 - **Technical choices**: Do the choices of libraries, databases, architecture etc. seem appropriate for the implementation?
 
@@ -108,13 +106,13 @@ Get Started
 ===========
 
 This application was developed using Poetry_ and python 3.8. 
-You can intialize the VM with `$ poetry install` and then
+You can intialize the VM with ``$ poetry install`` and then
 the API from the project root with ``$ poetry run flask run``
 
 If everything is configured and running as expected, you should get a response
 welcoming you to the challenge at ``http://localhost:5000/``
 
 
-
 Good luck! If you have any questions along the way, please don't hesitate to ask!
+
 .. _Poetry: https://python-poetry.org/docs/
