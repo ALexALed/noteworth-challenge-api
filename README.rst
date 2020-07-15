@@ -107,7 +107,8 @@ Bonus points (these items are optional):
 Get Started
 ===========
 
-This application was developed using Poetry_ and python 3.8. You can start 
+This application was developed using Poetry_ and python 3.8. 
+You can intialize the VM with `$ poetry install` and then
 the API from the project root with ``$ poetry run flask run``
 
 If everything is configured and running as expected, you should get a response
@@ -116,3 +117,4 @@ welcoming you to the challenge at ``http://localhost:5000/``
 
 
 Good luck! If you have any questions along the way, please don't hesitate to ask!
+.. _Poetry: https://python-poetry.org/docs/
