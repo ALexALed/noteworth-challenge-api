@@ -70,7 +70,7 @@ the checksum would be:
 
 ``sha256("12345/providers") = "bf6fa075e6d928d530fd4516e1671526ff1fe7f953209f0941553927bf16e9f8"``
 
-Note: Calling ``/auth`` will always generate a new token. Take care of it!
+Note: Calling ``/auth`` will invalidate any old tokens and generate a new token. Take care of the one you get!
 
 
 Providers
