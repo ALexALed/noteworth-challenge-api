@@ -3,6 +3,7 @@ import hashlib
 import json
 
 from providers import request_utils
+from providers.serializers import EmployeeSerializer
 
 
 logger = logging.getLogger(__name__)
@@ -53,3 +54,17 @@ class ProviderDataFetcher:
                     logger.error("Error %s for request %s", response.status_code, provider_data_url)
             except request_utils.RETRIES_ERROR:
                 logger.exception("Max count of attempts retries, for request %s", provider_data_url)
+
+
+class ProviderDataParser:
+
+    def __init__(self, data):
+        self.data = data
+
+    def save_data_to_models(self):
+        for each_data in self.data:
+            data_serialized = EmployeeSerializer(data=each_data)
+            if data_serialized.is_valid():
+                data_serialized.save()
+            else:
+                logger.error("Invalid data for %s", each_data)
