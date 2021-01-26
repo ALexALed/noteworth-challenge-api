@@ -1,0 +1,18 @@
+version: '2.4'
+services:
+  noteworth_challenge_api:
+    build:
+      context: .
+      dockerfile: noteworth_challenge_api/Dockerfile
+    env_file: noteworth_challenge_api/.flaskenv
+    ports:
+      - "5000:5000"
+  
+  noteworth_challenge_app:
+    build:
+      context: .
+      dockerfile: noteworth_challenge_app/Dockerfile
+    command: python manage.py runserver 0.0.0.0:8080
+    ports:
+      - "8080:8080"
+  

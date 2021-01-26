@@ -1,0 +1,32 @@
+FROM python:3.9
+
+
+RUN mkdir /noteworth_challenge_app
+
+COPY /noteworth_challenge_app /noteworth_challenge_app
+COPY /noteworth_challenge_app/entrypoint.sh /noteworth_challenge_app/entrypoint.sh
+
+WORKDIR /noteworth_challenge_app
+
+ENV PYTHONPATH=${PYTHONPATH}:${PWD} 
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=off \
+    PIP_DISABLE_PIP_VERSION_CHECK=on \
+    PIP_DEFAULT_TIMEOUT=100 \
+    POETRY_VERSION=1.0.5 \
+    POETRY_HOME="/opt/poetry" \
+    POETRY_VIRTUALENVS_IN_PROJECT=true \
+    POETRY_NO_INTERACTION=1 \
+    PYSETUP_PATH="/opt/pysetup" \
+    VENV_PATH="/opt/pysetup/.venv"
+
+RUN pip install poetry
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-dev
+
+RUN chmod +x /noteworth_challenge_app/entrypoint.sh
+ENTRYPOINT ["/bin/bash", "/noteworth_challenge_app/entrypoint.sh"]
+
+EXPOSE 8080
