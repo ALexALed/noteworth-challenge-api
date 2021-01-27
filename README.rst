@@ -11,6 +11,8 @@ You can check `http://localhost:8080/employees` for employees (This endpoint add
 
 On backend used Django (base setup, ORM and routing) and Django Rest Framework (for serialization and representation)
 
+PostgreSQL used as DB service
+
 
 Description of the problem and solution.
 ========================================
