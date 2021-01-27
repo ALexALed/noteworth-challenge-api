@@ -51,5 +51,6 @@ Trade-offs
 1. Apllication runs in development mode (`DEBUG=True`), it is not ready for production
 2. Docker and docker-compose setup is not finished (need to add volumes and env vars)
 3. Need to add envs for secrets, ports and hosts 
-4. Need to add reverse proxy server and python application server
+4. Need to add a HTTP server and python application server
 5. Need to add pre-commit hooks and CI/CD integration (github actions maybe)
+6. Logging and errors handling (logs should be more detailed and errors should be raised and collected)
