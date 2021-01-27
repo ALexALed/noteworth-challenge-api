@@ -10,7 +10,7 @@ def get_requests_session_with_failures(max_retries=2):
     retry_strategy = Retry(
         total=max_retries,
         status_forcelist=[408, 429, 500, 502, 503, 504],
-        method_whitelist=["HEAD", "GET", "OPTIONS"]
+        method_whitelist=["HEAD", "GET", "OPTIONS"],
     )
 
     adapter = HTTPAdapter(max_retries=retry_strategy)

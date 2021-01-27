@@ -5,6 +5,7 @@ RUN mkdir /noteworth_challenge_app
 
 COPY /noteworth_challenge_app /noteworth_challenge_app
 COPY /noteworth_challenge_app/entrypoint.sh /noteworth_challenge_app/entrypoint.sh
+COPY /noteworth_challenge_app/pytest.ini /noteworth_challenge_app/pytest.ini
 
 WORKDIR /noteworth_challenge_app
 
@@ -27,6 +28,5 @@ RUN poetry config virtualenvs.create false
 RUN poetry install --no-dev
 
 RUN chmod +x /noteworth_challenge_app/entrypoint.sh
-ENTRYPOINT ["/bin/bash", "/noteworth_challenge_app/entrypoint.sh"]
 
 EXPOSE 8080

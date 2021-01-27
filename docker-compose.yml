@@ -1,5 +1,13 @@
 version: '2.4'
 services:
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
   noteworth_challenge_api:
     build:
       context: .
@@ -9,10 +17,37 @@ services:
       - "5000:5000"
   
   noteworth_challenge_app:
+    image: noteworth_challenge_app
+    depends_on: 
+      - noteworth_challenge_api
+      - db
     build:
       context: .
-      dockerfile: noteworth_challenge_app/Dockerfile
+      dockerfile: noteworth_challenge_app/Dockerfile.web
+    entrypoint: /noteworth_challenge_app/entrypoint.sh
     command: python manage.py runserver 0.0.0.0:8080
     ports:
       - "8080:8080"
   
+  rabbitmq:
+    image: rabbitmq:3.8.11
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:15672"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  worker:
+    image: noteworth_challenge_app
+    container_name: worker
+    build:
+      context: .
+      dockerfile: noteworth_challenge_app/Dockerfile.worker
+    depends_on:
+      - noteworth_challenge_app
+      - rabbitmq
+    command: ["./worker.sh"]
